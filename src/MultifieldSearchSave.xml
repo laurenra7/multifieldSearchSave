@@ -3,15 +3,149 @@
         supportedPlatform="Web"
         xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+
     <name>Multifield Search Save</name>
     <description>Search multiple attributes of DataGrid or ListView and save search criteria for re-use</description>
-    <icon/>
+
+    <icon> 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
+    </icon>
+
     <properties>
-        <propertyGroup caption="General">
+        <propertyGroup caption="Appearance">
             <property key="sampleText" type="string" required="false">
                 <caption>Default value</caption>
                 <description>Sample text input</description>
             </property>
+            <property key="targetGridName" type="string" required="false" defaultValue="">
+                <caption>Grid Name</caption>
+                <description>The name of the grid on this page, as configured in the modeler. Optionally use a class name instead in the "Grid Class" parameter.</description>
+            </property>
+            <property key="targetGridClass" type="string" required="false" defaultValue="">
+                <caption>Grid Class</caption>
+                <description>(Optional) Instead of a grid name, you can enter the CSS class of one or more grids here. Any grids on the page with this class will be connected.</description>
+            </property>
+            <property key="renderAsTextarea" type="boolean" defaultValue="false">
+                <caption>Render as Textarea</caption>
+                <description>If true, the widget will render as a text area.</description>
+            </property>
+            <property key="ta_rows" type="integer" defaultValue="5">
+                <caption>Number of rows</caption>
+                <description>The number of rows to show for a textarea (textarea only).</description>
+            </property>
+            <property key="filterLabel" type="string" required="true" defaultValue="">
+                <caption>Filter Label</caption>
+                <description>A label to be used by the Applied Filters widget when this widget has an active filter.</description>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="Behavior">
+            <property key="gridEntity" type="datasource" isList="true" required="true">
+                <caption>Grid Entity</caption>
+                <description>The type of objects in the grid.</description>
+            </property>
+            <property key="minCharacters" type="string" required="false" defaultValue="">
+                <caption>Min Chars</caption>
+                <description>Minimum characters required to perform a search.</description>
+            </property>
+            <property key="searchAttributes" type="object" isList="true" required="false">
+                <caption>Search Attributes</caption>
+                <description>The attributes that will be considered when searching.</description>
+                <properties>
+                    <propertyGroup caption="Basic">
+<!--                        <property key="searchAttributeParam" type="attribute" required="false" entityProperty="../gridEntity" isPath="optional" pathType="reference">-->
+                        <property key="searchAttributeParam" type="attribute" required="false">
+                            <caption>Search Attribute</caption>
+                            <description>The attribute to search. This can be in the same entity as in the grid, or follow a path to associated objects.</description>
+                            <attributeTypes>
+                                <attributeType name="Enum"/>
+                                <attributeType name="String"/>
+                                <attributeType name="Integer"/>
+                                <attributeType name="Decimal"/>
+                                <attributeType name="Long"/>
+                                <attributeType name="AutoNumber"/>
+                            </attributeTypes>
+                        </property>
+                        <property key="searchMethodParam" type="enumeration" defaultValue="startswith">
+                            <caption>Search Method</caption>
+                            <description>Search method to use</description>
+                            <enumerationValues>
+                                <enumerationValue key="startswith">starts-with</enumerationValue>
+                                <enumerationValue key="contains">contains</enumerationValue>
+                            </enumerationValues>
+                        </property>
+                    </propertyGroup>
+                    <propertyGroup caption="Advanced (optional)">
+                        <property key="customSearchEntity" type="datasource" isList="true" required="false">
+                            <caption>Custom search entity</caption>
+                            <description>The entity that contains the attribute to search. This can be the same entity as in the grid, or follow a path to associated objects.</description>
+                        </property>
+                        <property key="customSearchAttribute" type="attribute" dataSource="customSearchEntity" required="false">
+                            <caption>Custom search attribute</caption>
+                            <description>The attribute to search on the grid.</description>
+                            <attributeTypes>
+                                <attributeType name="Enum"/>
+                                <attributeType name="String"/>
+                                <attributeType name="Integer"/>
+                                <attributeType name="Decimal"/>
+                                <attributeType name="Long"/>
+                                <attributeType name="AutoNumber"/>
+                            </attributeTypes>
+                        </property>
+                        <property key="customSearchPath" type="string" required="false">
+                            <caption>Custom search path</caption>
+                            <description>XPath to get from the object in the grid to the entity to be searched. Used when you need to traverse more than 1 association or a *-* association. (e.g. MyModule.GridEntity_OtherEntity/MyModule.OtherEntity)</description>
+                        </property>
+                    </propertyGroup>
+                </properties>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="Expert Search">
+            <property key="expertQuery" type="string" multiline="true" required="false" defaultValue="">
+                <caption>Query</caption>
+                <description>An xpath query to use in the search. Use {[1]} as a token for the search string.</description>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="Boolean Logic">
+            <property key="allowOrConditions" type="boolean" defaultValue="false">
+                <caption>Allow OR conditions</caption>
+                <description>Whether the query string can be split in multiple parts using boolean OR logic.</description>
+            </property>
+            <property key="useRegEx" type="boolean" defaultValue="false">
+                <caption>Interpret as RegEx</caption>
+                <description>If true, the OR condition string will be interpreted as a regular expression (type without bracing forward slashes, i.e. \d{3}, not /\d{3)/).</description>
+            </property>
+            <property key="splitString" type="string" required="false" defaultValue=" OR ">
+                <caption>OR condition string</caption>
+                <description>A string used the split the search text into multiple parts. Each will become a condition on the search split by OR.</description>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="Search Save">
+            <property key="searchSaveEntity" type="datasource" isList="true" required="false">
+                <caption>Save search entity</caption>
+                <description>Entity where search parameters will be saved for re-use</description>
+            </property>
+            <property key="searchSaveAttribute" type="attribute" dataSource="searchSaveEntity" required="false">
+                <caption>Save search attribute</caption>
+                <description>Attribute of entity where search parameters will be saved for re-use</description>
+                <attributeTypes>
+                    <attributeType name="Enum"/>
+                    <attributeType name="String"/>
+                    <attributeType name="Integer"/>
+                    <attributeType name="Decimal"/>
+                    <attributeType name="Long"/>
+                    <attributeType name="AutoNumber"/>
+                    <attributeType name="DateTime"/>
+                </attributeTypes>
+            </property>
         </propertyGroup>
     </properties>
+    <!--    <icon/>-->
+<!--    <properties>-->
+<!--        <propertyGroup caption="General">-->
+<!--            <property key="sampleText" type="string" required="false">-->
+<!--                <caption>Default value</caption>-->
+<!--                <description>Sample text input</description>-->
+<!--            </property>-->
+<!--        </propertyGroup>-->
+<!--    </properties>-->
 </widget>
+

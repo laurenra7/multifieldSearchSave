@@ -9,7 +9,7 @@
     "node": ">=12"
   },
   "config": {
-    "projectPath": "./tests/testProject/",
+    "projectPath": "C:\\Users\\laurenra\\Documents\\Mendix\\FunStuff-lauren-widget-test/",
     "mendixHost": "http://localhost:8080",
     "developmentPort": "3000"
   },
