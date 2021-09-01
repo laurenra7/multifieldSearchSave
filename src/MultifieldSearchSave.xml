@@ -11,6 +11,15 @@
     </icon>
 
     <properties>
+        <propertyGroup caption="Test Data Source">
+            <property key="textAttribute" type="attribute">
+                <caption>Attribute (path)</caption>
+                <description>The attribute to be entered</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+        </propertyGroup>
         <propertyGroup caption="Appearance">
             <property key="sampleText" type="string" required="false">
                 <caption>Default value</caption>

@@ -30,6 +30,7 @@ export interface MultifieldSearchSaveContainerProps {
     class: string;
     style?: CSSProperties;
     tabIndex?: number;
+    textAttribute: EditableValue<string>;
     sampleText: string;
     targetGridName: string;
     targetGridClass: string;
@@ -50,6 +51,7 @@ export interface MultifieldSearchSaveContainerProps {
 export interface MultifieldSearchSavePreviewProps {
     class: string;
     style: string;
+    textAttribute: string;
     sampleText: string;
     targetGridName: string;
     targetGridClass: string;
